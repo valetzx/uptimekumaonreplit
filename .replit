@@ -1,0 +1,6 @@
+entrypoint = "index.js"
+
+run=["bash","main.sh"]
+
+[packager]
+language = "nodejs"
