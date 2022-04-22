@@ -15,3 +15,6 @@ Rplit教育版：
 `git clone https://github.com/valetzx/uptimekumaonreplit && mv -b uptimekumaonreplit/* ./ && mv -b uptimekumaonreplit/.[^.]* ./ && rm -rf *~ && rm -rf uptimekumaonreplit`
 
 当加载完 Loading Nix environment... 后点击绿色 ▶ Run
+
+新增 `main.py` 部署企业微信通知
+新增 `pushbullet.js` 企业微信配置
