@@ -1,3 +1,5 @@
+//将这个文件替换 ./uptime-kuma/server/notification-providers/pushbullet.js 
+//并更改16行域名，企业微信通知部署教程：
 const NotificationProvider = require("./notification-provider");
 const axios = require("axios");
 var qs = require('qs');
