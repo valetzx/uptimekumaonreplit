@@ -1,8 +1,26 @@
-#此脚本为手动更新，请关闭程序后使用！
+#!/bin/bash
+
+# 切换到uptime-kuma目录
 cd uptime-kuma
+
+# 获取最新稳定版本号非beta版
+current_version=$(git describe --tags)
+latest_version=$(git tag -l --sort=v:refname | grep -v "beta" | tail -n1)
+
+if [ "${current_version}" == "${latest_version}" ]; then
+  echo "The current version is already the latest: ${latest_version}"
+  exit 0
+fi
+
+# 切换到最新版本
 git fetch --all
-git checkout 1.15.1 --force
-#在replit shell中输入 sh update.sh 回车 以更新
-npm ci --production
+git checkout "${latest_version}" --force
+
+# 安装生产所需依赖并下载构建后的代码
+npm install --production
 npm run download-dist
-#更新完成后点 绿色run 运行！
+
+# 启动程序
+pm2 restart uptime-kuma
+
+echo "Upgrade to version ${latest_version} successfully!"
