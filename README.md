@@ -20,8 +20,8 @@ Rplit教育版：
 
 新增 `pushbullet.js` 企业微信配置
 
-新增 `update.sh` 手动更新 
+新增 `upgrade.sh` 手动更新 
 
-更新以后的版本 可以把 `git checkout 1.15.1 --force` 1.15.1 改成想更新的版本
+使用 `upgrade.sh` 选择更新至最新稳定版本
 
 Replit有点拉，似乎会回档，会导致数据库很多对不上。= 。随便用用吧20220430
